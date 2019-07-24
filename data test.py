@@ -4,6 +4,7 @@ from scipy.io import wavfile
 from PIL import Image
 import os
 
+
 def crop():
     a = os.listdir("specs")
     a.sort()
@@ -11,12 +12,12 @@ def crop():
     print(a)
     for name in a:
         try:
-            original = Image.open("specs/%s" %name)
+            original = Image.open(f"specs/{name}")
         except:
             print("couldn't open image\n")
 
-        cropped = original.crop((675,800,3200,2050))
-        cropped.save("specs/%s" %name)
+        cropped = original.crop((675, 800, 3200, 2050))
+        cropped.save(f"specs/{name}")
 
 
 crop()
