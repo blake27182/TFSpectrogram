@@ -1,3 +1,5 @@
 # TFSpectrogram
-This is a collection of scripts that train Tensorflow to recognize the sound of a knock on the door
-This process is currently not working. Future progress will most likely profit from more training data, higher resolution spectrograms, and silence detection.
+This is a collection of scripts that train Tensorflow to recognize the sound of a knock on the door.
+This process is currently not working. Future progress will most likely benefit from more training data, higher resolution spectrograms, and silence detection.
+
+This works by taking a sound recording, breaking it into 3 second chunks, then converting each one into a spectrogram. If you are training, this step organizes each recording snippet by its label being either a knock at the door, or not. The images are then fed into tensorflow and trained on the corresponding labels as if they were photographs. I came up with this technique before I discovered that Shazam and Siri and other services actually use a similar method of identifying songs. The difference is that they have an extra step of deriving contour from the spectrogram, then choosing critical nodes on that contour that are "characteristic" and feed THAT data into a neural network, thereby reducing the noise by a few order of magnitudes.
